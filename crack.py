@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+
 import argparse
 from PIL import Image
 import hashlib
@@ -74,7 +76,7 @@ def binaryimage(im, im2):
 
     # im2.show()
 
-
+# 命令行： python crack.py ./examples/iyusjy.gif
 if __name__ == '__main__':
     im = Image.open(IMG)
     # im = Image.open("captcha.gif")
@@ -100,11 +102,11 @@ if __name__ == '__main__':
             if pix != 255:
                 inletter = True
 
-        if foundletter == False and inletter == True:
+        if foundletter is False and inletter is True:
             foundletter = True
             start = y
 
-        if foundletter == True and inletter == False:
+        if foundletter is True and inletter is False:
             foundletter = False
             end = y
             letters.append((start, end))
